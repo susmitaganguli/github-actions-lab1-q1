@@ -13,6 +13,12 @@ jobs:
       with:
         python-version: 3.11
 
+    - uses: actions/checkout@v7
+      with:
+        sparse-checkout: |
+          requirements.txt
+        sparse-checkout-cone-mode: false
+
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
